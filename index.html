@@ -24,10 +24,21 @@
     <header>
       <h1>Weather Dashboard</h1>
     </header>
-    <div>
-      <label>Search for a City:</label>
-      <input type="text" placeholder="enter city name">
-      <button><i class="fas fa-search"></i></button>
+    <!-- main row div  -->
+    <div class="container">
+      <!-- need 2 column divs  -->
+      <div class="search col-4">
+        <form id="searchForm" method="POST">
+          <label>Search for a City:</label>
+          <br>
+          <input type="text" placeholder="enter city name" id="citySearch">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <ul id="cityList"></ul>
+      </div>
+      <div class="col-8">
+        <!-- need 2 more rows in this div  -->
+      </div>
 
     </div>
 
