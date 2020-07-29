@@ -17,3 +17,20 @@ header {
   padding-bottom: 20px;
   background-color: #eeeeee;
 }
+
+.cityBtn {
+  height: 40px;
+  width: 250px;
+  margin-top: 5px;
+  /* margin-bottom: 5px; */
+  /* padding: 5px; */
+  background-color: white;
+  border: 1px solid black;
+  text-align: left;
+  font-size: 1.2em;
+  line-height: 1.5;
+
+}
+
+/* #cityList {
+} */

@@ -9,9 +9,17 @@ $(function() {
 
   function renderCities() {
     // first clear elements
-    searchedCityList.innerHTML = "";
+    searchedCityList.empty();
     // create new li for each cityHistory
-    // cityHistory.length loop
+    cityHistory.forEach(function(element) {
+      console.log(element);
+      const listItem = $("<button>");
+      // add li attribute (class) for styling
+      listItem.addClass("cityBtn").text(element);
+      $(searchedCityList).append(listItem);
+      // add delete button
+    });
+
   }
 
   function storeCities() {
@@ -21,14 +29,16 @@ $(function() {
   // when search city name is entered... 
   $(citySearchForm).on("submit", function() {
     event.preventDefault();
-    const nameToSearch = citySearchName.value.trim();
+    const nameToSearch = citySearchName
+      .val()
+      .trim();
     if (nameToSearch === "") {
       return;
     }
     cityHistory.push(nameToSearch);
+    console.log(cityHistory);
     // clear search field
-    citySearchName.value = "";  
-    console.log(citySearchName);
+    $(citySearchName).val("");  
     storeCities();
     renderCities();
   });
