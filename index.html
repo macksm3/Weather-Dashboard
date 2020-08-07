@@ -24,26 +24,54 @@
     <header>
       <h1>Weather Dashboard</h1>
     </header>
-    <!-- main row div  -->
-    <div class="container">
-      <!-- need 2 column divs  -->
-      <div class="search col-4">
-        <form id="searchForm" method="POST">
-          <label>Search for a City:</label>
-          <br>
-          <input type="text" placeholder="enter city name" id="citySearch">
-          <button type="submit"><i class="fas fa-search"></i></button>
-        </form>
-        <div id="cityList"></div>
-      </div>
-      <div class="col-8">
-        <!-- need 2 more rows in this div  -->
-      </div>
+    <!-- <div class="container"> -->
+      <!-- main row div  -->
+      <div class="row">
+        <!-- need 2 column divs  -->
+        <div class="search col-3">
+          <form id="searchForm" method="POST">
+            <label>Search for a City:</label>
+            <br>
+            <input type="text" placeholder="enter zip code" id="citySearch">
+            <button type="submit"><i class="fas fa-search"></i></button>
+          </form>
+          <div id="cityList"></div>
+        </div>
+        <div class="col-9">
+          <!-- need 2 more rows in this div  -->
+          <div class="row">
+            <!-- Retrieved data will be dumped here -->
+            <div class="container currentConditions">
+              <h4 class="city"></h4>
+              <p class="tempF"></p>
+              <p class="humidity"></p>
+              <p class="wind"></p>
+              <!-- <p class="temp"></p> -->
+            </div>
 
-    </div>
+          </div>
+          <hr>
+          <div class="row">
+            <!-- <div class="spacer col-1"></div> -->
+            <div id="dayOne" class="card col-2"></div>
+            <div id="dayTwo" class="card col-2"></div>
+            <div id="dayThree" class="card col-2"></div>
+            <div id="dayFour" class="card col-2"></div>
+            <div id="dayFive" class="card col-2"></div>
+            <!-- <div class="spacer col-1"></div> -->
+          </div>
+       </div>
 
+      </div>
+      <hr>
+      <div class="row">
+        <button id="btnTestOne">Get Weather</button>    
+        <button id="btnTestTwo">Get Forcast</button>
+      <!-- </div> -->
+
+  </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
