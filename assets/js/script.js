@@ -1532,13 +1532,37 @@ $(function() {
       const dateThreeText = moment(dayThreeBlock.dt_txt).format("M/D/YYYY");
       const dateFourText = moment(dayFourBlock.dt_txt).format("M/D/YYYY");
       const dateFiveText = moment(dayFiveBlock.dt_txt).format("M/D/YYYY");
-      // console.log("date one is: " + dayOneBlock.dt_txt);
-
+      // console.log(dayOneBlock.weather[0].icon);
+      const dayOneIcon = (`http://openweathermap.org/img/w/${dayOneBlock.weather[0].icon}.png`);
+      const dayTwoIcon = (`http://openweathermap.org/img/w/${dayTwoBlock.weather[0].icon}.png`);
+      const dayThreeIcon = (`http://openweathermap.org/img/w/${dayThreeBlock.weather[0].icon}.png`);
+      const dayFourIcon = (`http://openweathermap.org/img/w/${dayFourBlock.weather[0].icon}.png`);
+      const dayFiveIcon = (`http://openweathermap.org/img/w/${dayFiveBlock.weather[0].icon}.png`);
       // $("#dayOne .date").text(dateOneText);
-      $cardDayOne.append("<h5>" + dateOneText + "</h5>")
+      $cardDayOne.append("<h5>" + dateOneText + "</h5>");
+      $cardDayOne.append(`<i><img src="${dayOneIcon}" alt="Weather Icon"></i>`);
+      $cardDayOne.append("<p>Temp: " + ((dayOneBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " F</p>")
       $cardDayOne.append("<p>Humidity: " + dayOneBlock.main.humidity + "%</p>");
-      $cardDayTwo.append("<h5>" + dateTwoText + "</h5>")
+
+      $cardDayTwo.append("<h5>" + dateTwoText + "</h5>");
+      $cardDayTwo.append(`<i><img src="${dayTwoIcon}" alt="Weather Icon"></i>`);
+      $cardDayTwo.append("<p>Temp: " + ((dayTwoBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " F</p>")
       $cardDayTwo.append("<p>Humidity: " + dayTwoBlock.main.humidity + "%</p>");
+
+      $cardDayThree.append("<h5>" + dateThreeText + "</h5>");
+      $cardDayThree.append(`<i><img src="${dayThreeIcon}" alt="Weather Icon"></i>`);
+      $cardDayThree.append("<p>Temp: " + ((dayThreeBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " F</p>")
+      $cardDayThree.append("<p>Humidity: " + dayThreeBlock.main.humidity + "%</p>");
+
+      $cardDayFour.append("<h5>" + dateFourText + "</h5>");
+      $cardDayFour.append(`<i><img src="${dayFourIcon}" alt="Weather Icon"></i>`);
+      $cardDayFour.append("<p>Temp: " + ((dayFourBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " F</p>")
+      $cardDayFour.append("<p>Humidity: " + dayFourBlock.main.humidity + "%</p>");
+
+      $cardDayFive.append("<h5>" + dateFiveText + "</h5>");
+      $cardDayFive.append(`<i><img src="${dayFiveIcon}" alt="Weather Icon"></i>`);
+      $cardDayFive.append("<p>Temp: " + ((dayFiveBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " F</p>")
+      $cardDayFive.append("<p>Humidity: " + dayFiveBlock.main.humidity + "%</p>");
     });
   }
 
@@ -1567,7 +1591,9 @@ $(function() {
       console.log(currentWeather.dt);
       console.log(dateCurrent);
       // Transfer content to HTML
-      $(".city").text(`${currentWeather.name} ${dateCurrent}`);
+      const currentWeatherIcon = (`http://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png`);
+      console.log(currentWeather.weather[0].icon);
+      $(".city").text(`${currentWeather.name} ${dateCurrent} `).append(`<i><img src="${currentWeatherIcon}"></i>`);
       $(".wind").text(`Wind Speed: ${currentWeather.wind.speed} MPH`);
       $(".humidity").text(`Humidity: ${currentWeather.main.humidity}%`);
       // extract date from datecode integer 
