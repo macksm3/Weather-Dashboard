@@ -13,11 +13,6 @@ $(function () {
     const $cardDayFive = $("#dayFive");
     let cityHistory = [];
 
-
-    //   const buttonTesterOne = $("#btnTestOne");
-    // const buttonTesterTwo = $("#btnTestTwo");
-
-
     // Functions
 
     function renderCities() {
@@ -30,8 +25,8 @@ $(function () {
         console.log(cityHistory);
         // create new li for each cityHistory
         cityHistory.forEach(function (element) {
-            console.log("city history loop");
-            console.log(element);
+            // console.log("city history loop");
+            // console.log(element);
             const listItem = $("<button>");
             // add li attribute (class) for styling
             listItem.addClass("cityBtn").text(element);
@@ -57,8 +52,8 @@ $(function () {
 
 
     function getForcast(location) {
-        console.log("forecast location");
-        console.log(location);
+        // console.log("forecast location");
+        // console.log(location);
 
         // Here we are building the URL we need to query the database
         var queryURL = "https://api.openweathermap.org/data/2.5/forecast?zip=" + location + "&appid=" + APIKey;
@@ -67,7 +62,7 @@ $(function () {
           url: queryURL,
           method: "GET"
         }).then(function(response) {
-        console.log(response);
+        // console.log(response);
         // console.log(queryURL);
         // buttonTesterTwo.on("click", function () {
             currentForecast = response;
@@ -176,8 +171,8 @@ $(function () {
             // ****** for current weather end ********
 
             const cityZip = (`${currentWeather.name}, ${location}`);
-            console.log("city and zip combined");
-            console.log(cityZip);
+            // console.log("city and zip combined");
+            // console.log(cityZip);
             storeCities(cityZip);
             getForcast(location);
         });
