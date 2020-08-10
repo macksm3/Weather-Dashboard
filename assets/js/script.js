@@ -128,6 +128,17 @@ $(function () {
         });
     }
 
+    function getUVIndex(uviRequest) {
+        console.log(uviRequest);
+        $.ajax({
+            url: uviRequest,
+            method: "GET"
+        }).then(function(uviResponse) {
+            console.log("UV index: " + uviResponse.value);
+            $(".uvi").text(uviResponse.value);
+        });
+        
+    }
 
     function getWeather(location) {
         console.log("current weather location");
@@ -165,11 +176,12 @@ $(function () {
             // $(".temp").text("Temperature (K) " + response.main.temp);
             $(".tempF").text("Temperature (F) " + tempF.toFixed(0));
 
-
-            // store ${currentWeather.name} and (location) in local storage for button list
+            const uviURL = "https://api.openweathermap.org/data/2.5/uvi?APIkey=" + APIKey + "&lon=" + currentWeather.coord.lon + "&lat=" + currentWeather.coord.lat;
+            getUVIndex(uviURL);
+            
 
             // ****** for current weather end ********
-
+            // store ${currentWeather.name} and (location) in local storage for button list
             const cityZip = (`${currentWeather.name}, ${location}`);
             // console.log("city and zip combined");
             // console.log(cityZip);
