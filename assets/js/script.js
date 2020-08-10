@@ -103,27 +103,27 @@ $(function () {
             // $("#dayOne .date").text(dateOneText);
             $cardDayOne.append("<h5>" + dateOneText + "</h5>");
             $cardDayOne.append(`<i><img src="${dayOneIcon}" alt="Weather Icon"></i>`);
-            $cardDayOne.append("<p>Temp: " + ((dayOneBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " F</p>")
+            $cardDayOne.append("<p>Temp: " + ((dayOneBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " &deg;F</p>")
             $cardDayOne.append("<p>Humidity: " + dayOneBlock.main.humidity + "%</p>");
 
             $cardDayTwo.append("<h5>" + dateTwoText + "</h5>");
             $cardDayTwo.append(`<i><img src="${dayTwoIcon}" alt="Weather Icon"></i>`);
-            $cardDayTwo.append("<p>Temp: " + ((dayTwoBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " F</p>")
+            $cardDayTwo.append("<p>Temp: " + ((dayTwoBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " &deg;F</p>")
             $cardDayTwo.append("<p>Humidity: " + dayTwoBlock.main.humidity + "%</p>");
 
             $cardDayThree.append("<h5>" + dateThreeText + "</h5>");
             $cardDayThree.append(`<i><img src="${dayThreeIcon}" alt="Weather Icon"></i>`);
-            $cardDayThree.append("<p>Temp: " + ((dayThreeBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " F</p>")
+            $cardDayThree.append("<p>Temp: " + ((dayThreeBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " &deg;F</p>")
             $cardDayThree.append("<p>Humidity: " + dayThreeBlock.main.humidity + "%</p>");
 
             $cardDayFour.append("<h5>" + dateFourText + "</h5>");
             $cardDayFour.append(`<i><img src="${dayFourIcon}" alt="Weather Icon"></i>`);
-            $cardDayFour.append("<p>Temp: " + ((dayFourBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " F</p>")
+            $cardDayFour.append("<p>Temp: " + ((dayFourBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " &deg;F</p>")
             $cardDayFour.append("<p>Humidity: " + dayFourBlock.main.humidity + "%</p>");
 
             $cardDayFive.append("<h5>" + dateFiveText + "</h5>");
             $cardDayFive.append(`<i><img src="${dayFiveIcon}" alt="Weather Icon"></i>`);
-            $cardDayFive.append("<p>Temp: " + ((dayFiveBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " F</p>")
+            $cardDayFive.append("<p>Temp: " + ((dayFiveBlock.main.temp - 273.15) * 1.80 + 32).toFixed(0) + " &deg;F</p>")
             $cardDayFive.append("<p>Humidity: " + dayFiveBlock.main.humidity + "%</p>");
         });
     }
@@ -174,7 +174,7 @@ $(function () {
             // Convert the temp to fahrenheit
             const tempF = (currentWeather.main.temp - 273.15) * 1.80 + 32;
             // $(".temp").text("Temperature (K) " + response.main.temp);
-            $(".tempF").text("Temperature (F) " + tempF.toFixed(0));
+            $(".tempF").text(tempF.toFixed(0));
 
             const uviURL = "https://api.openweathermap.org/data/2.5/uvi?APIkey=" + APIKey + "&lon=" + currentWeather.coord.lon + "&lat=" + currentWeather.coord.lat;
             getUVIndex(uviURL);
