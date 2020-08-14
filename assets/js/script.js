@@ -207,5 +207,6 @@ $(function () {
     });
 
     renderCities();
+    // need to init with somethins 
 
 });
