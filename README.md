@@ -10,9 +10,9 @@ The weather icons are supplied by the open weather site  and the URL is built us
 
 ![image](assets/WeatherDashboardScreenShot.png "basic layout")
 
-repo url: https://github.com/macksm3/HW6-Weather-Dashboard
+repo url: https://github.com/macksm3/Weather-Dashboard
 
-live site url: https://macksm3.github.io/HW6-Weather-Dashboard/
+live site url: https://macksm3.github.io/Weather-Dashboard/
 
 search history needs work, currently checking new search against existing so it does not add twice, want to change that so it will delete at existing position and add at last position. Also want delete button integrated into each search list item button. 
  
